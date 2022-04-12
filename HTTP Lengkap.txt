@@ -1,0 +1,239 @@
+Link video youtube : https://www.youtube.com/watch?v=92Rjzrq4oIg&t=5700s&ab_channel=ProgrammerZamanNow
+Link Materi yang dibahas oleh mas eko : https://docs.google.com/presentation/d/13RSfJzqjnvdUO33u2K1m8vefa7sn9rIZ5h4wUa-DIqk/edit#slide=id.p
+
+Pengenalan HTTP 
+URL 
+HTTP Method
+HTTP Header 
+HTTP Body
+HTTP Respones
+HTTP Cookie 
+
+Pengenalan 
+- HTTP merupakan protokol untuk melakukan transmisi hypermedia document seperti HTML,JS, CSS, Image, Video, dll
+- HTTP awalnya di desain untuk komunikasi antara Web Browser dan Web Server, namun saat ini juga sering digunakan untuk kebutuhan lain , API , backend
+
+Client Server
+- HTTP mengiktui arsitektur client dan server
+- Client mengirimkan HTTP Request(POSt) untuk meminta atau mengirim informasi ke server
+- Dan server membalas dengan HTTP Response(GET) dari HTTP request yang diterima, berupa konten akan dibalas biasanya
+
+
+- Plain Language and Human Readable 
+HTTP didesain menggunakan bahasa yang mudah dimengerti oleh bahasa manus seperti :
+ GET
+ POST
+ PUT 
+ DELETE
+ HEAD
+ OPTION
+
+
+STEATELESS 
+HTTP merupakan protkol yang stateless
+artinya tiap HTTP Request merupakan request yang independen, tidak ada keterkaitan atau hubungan dengan HTTP Request sebelum atau setelahnya
+hal ini dilakukan agar HTTP request tidak harus dilakukan dalam squence(terstruktur), sehingga client bisa melakukan HTTP Requset secara bebas tanpa ada aturan harus dimulai dari mana
+
+Session
+ - Jika HTTP merupakan protokol yang stateless , bagaiaman dengan session ? misal client harus login terlebih dahulu belum berinteraksi
+- untuk menangani permasalahan ini seperti ini, HTTP memeiliki fitur yang bernama HTTP Cookie
+- HTTP Cookie memaksa client menyimpan informasi yang diberikan oleh server
+
+
+HTTP version 
+Spesifikasi HTTP selalu diperbarui, spesifikasi seperti aturan karena user pasti akan bertambah banyak
+- saat ini kebanyakan web berjalan diHTTP/1.1 atau HTTP2
+- HTTP2 mulai dari hadir sekitar tahun 2015 dan saat ini sudah banyak diadopsi oleh semua Web di Dunia 70% user
+
+
+HTTP 1.1 vs HTTP2
+- Saat ini di HTTP 1.1 merupakan fallback protokol(jika tidak support versi 1.1 maka pindah ke HTTP 2, bukan masalah lagi karena web browser akan tahu bahwa website tersebut menggunakan HTTP 1.1), dimana Web browser secara default akan melakukan request menggunakan HTTP/2, jika web server tidak mendukung, maka web browser akan melakukan fallback ke protkol HTTP/1.1
+- Secara garis besar, spesifikasi HTTP 2 dengan HTTP 1.1 sama saja namun ada improvment, HTTP 1.1 mengirimkan Requst dalam bentuk teks , sedangkan HTTP 2 menggunakan Binary(0 dan 1), untuk gambar lebih cepat menggunakan binary dibandingkan HTTP 1.1
+- Selain itu di HTTP 2, menggunakan algoritma kompresi untuk memperkecil request dan mendukung multiplexing , sehingga bisa mengirim beberapa requeset dalam satu connection yang sama, contoh ada foto 2mb, maka akan dikompress foto tersebut di dalam kontent
+1 koneksti bisa meingrim permintaan lebih dari 2 jika HTTP3
+- dari sisi pembuatan aplikasi, tidak ada perbedaan, semua ini biasanya sudah diurus secara otomatis oleh web server yang ktia gunakan
+
+HTTPS
+HTTPs secara default, tidaklah aman
+- HTTP merupakan HTTP dengan enkripsi 
+- perbedaan HTTP dan HTTPS adalah pada  HTTPS menggunakan SLL(secure socket layer) untuk melakukan enkripsi HTTP request dan HTTP respone
+- Hasil HTTPs jauh lebih aman dibanding dengan HTTP biasa
+- Web yang menggunakan HTTPs akan menggunakan https:// pada url-nya dan yang hanya menggunakan HTTP tanpa enkripsi akan menggunakan http://
+
+
+
+HTTP Terminology 
+- saat kita belajar HTTP, ada banyak sekali menggunakan terminologi, istilah atau teknologi 
+- dan kita perlu mengerti tentang hal tersebut
+
+1. Web Browser
+merupakan aplikasi yang digunakan untuk mengakses web menggunakan protokol HTTP, contoh aplikasi google chorem, safari, mozila ,dll
+
+2. TCP
+- TCP singkatan dari Transmission Control Protocol(Protokol berkomunikasi antar client dengan web servernya) adalah salah satu protokol dalam jaringan komputer yang biasa digunakan oleh web, email, FTP , lainnya
+- JIka kita menggunakan jaringan internet, kemungkinana besar kita akan menggunakan protokol TCP untuk melakukan koneksi jaringannya
+
+
+
+IP
+- IP singkatan dari Internet Protocol
+- IP digunakan sebagai indentitas komputer jaringan 
+- setiap komputer baik it client dan server akan memiliki IP 
+- untuk mengecek ip jaringan kita di internet, contohnya kita bisa  mengakses web (jaringan ISP ini)
+
+
+URL 
+URL singkatan dari Uniform Resource Locator
+URL merupakan alamat sebuah dari resource di Web (link ini mah)
+
+
+DNS
+-DNS singkatan Domain Name Server
+-DNS merupakan tempat yang berisi data katalog pemetaan antara nama domain di URL menuju lokasi IP komputer (sebenarnya itu adalah alamat ip Google yang kita akses itu  )
+- saat ini Web Browser mengakses sebuah domain di web, sebenarnya prosesnya akan bertanya ke DNS untuk mendapatkan IP, lalu web browser akan melakukan request ke IP tersebut (kontak => no telpon)
+- Untuk mengecek IP sebuah domain, kita bisa gunakan website
+- bisa melihat di DNS Lookup
+
+
+Web Server 
+- Web server merupakan aplikasi berjalan di jaringan Internet yang betugas sebagai server
+- Web server berisi informasi dan data yang yang bisa diakses oleh client, minta ke facebook lalu facebook mencari datanya di lalu mengembalikan data yang diminta ke user
+- Web server akan menerima request dari client, dan membalas request tersebut berupa informasi yang diminta oleh client
+
+
+HTTP Flow
+- bagaiman alur kerja HTTP? 
+- Dalam HTTP, biasanya terdapat dua pihak yang dilibatkan yaitu client dan server
+- Client akan mengirimkan Request 
+- dan server akan menerima requsetdari client dan membalas dengan response
+
+Server 
+- server merupakan sebuah komputer, dimana semua informasi disimpan pada komputer tersebut (pasti juga di install aplikasi web server) facebook menyimnapan foto teks ,video
+- komputer server biasanya menjalankan aplikasi webserver agar bisa menerima protokol HTTP, komputer hanya menyimpnana danw webserver akan mengelola data lalu megembalikan data ke user(HTTP)
+
+diagrama
+
+
+Client
+- Client merupakan komputer yang bertugas mengirim HTTP request ke komputer server, jika tidak request maka web server tidak akan mengirimakan datanya atau meroseponnya 
+- untuk mengirim request HTTP, biasanya client akan menggunakan apliksi Web Browser
+- Client dan Server harus terkoneksi dalam jaringan yang sama, agar bisa berkomunikasi 
+- misal saja clinet dan server terhubung dalam jaringan internet
+
+
+Diagarama Request
+
+
+Request 
+- Client akan mengirimkan request ke server dalam bentuk HTTP request 
+- HTTP request berisikan informasi seperti lokasi resource, data yang dikirim jika ada , dan lain-lain(upload story facebook minta ke webserver lalu webserbe menerima dan disimpan di facebook)
+- HTTP request akan diterima oleh server
+- selanjutnya server akan memproses request yang diminta oleh client tersebut (disimpann data yaa oleh web server)
+
+
+Response
+- Setelah server memproses HTTP requset yang dikirimkan oleh client
+- Server akan membahas dengan HTTP Response
+- HTTP respone biasanya berisikan data yang diminta oleh client dalam HTTP request
+
+
+Browser Network Tool
+- Utuk lebih mempermudah melihat apa yang dilakukan dibelakang Web Browser, biasanya Web Brower, biasanya Web Browser memiliki fitur network tool
+- Contoh di browser seprti google chorme dan firefox sudah memilliki Network tool
+- Dengan network tool, kita bisa melihat semua detail HTTP request dan HTTP Response yang dilakukan oleh client dan Server (biasanya banyak sekali yang direquest seperti foto dan video)
+
+Pratikum yukkk
+
+web broser akan baca dokumentasi HTML yang dikirmkan oleh web server(tidak semua jeblek gitu nampilnya karena semua butuh proses) lalu jika ada gambar web broser/ http request tahu lalu request akan meminta gambar detailnya dari webserver, 
+
+
+HTTP request dan respone secara detail 
+HTTP Message
+- HTTP request dan response sebenarnya adalah sebuah HTTP messsage
+- HTTP Message memiliki standariasai format(sudah ada aturaran baku tidak asal membuatnya sesuka kita)
+- dengan demikian, jika kita ingin membuat  Client dan server sendiri, sebenarnya kita bisa lakukan asal kita mengikuti standarisasi format HTTP message
+
+38 menit HTTP messegae untuk req
+
+bentuk teks
+HTTP Message Request:
+
+1. Start line
+- method post/ http method
+- konteks path
+- versi HTTP
+2. Header
+  -host: domain ya
+3. Space = garis pemisah antar header dan body
+4. body
+- upload video maka berupa video/ gambar , jika teks lah teks
+ 
+biasanya urtl gabungan dari hostnya lalu path yang di start line
+
+
+HTTP Message untuk Respone:
+start line
+- versi HTTP
+- jumlah soucer code
+haeder
+space
+body
+- berupa teks notfikasi berhasil
+
+42 menit
+jenis HTTPs method
+get data videom, gambar
+head,
+post mengirim upload data(tambah data baru)
+delete(menghapus data)
+put(menimpa atau mengganti kan data tersebut)
+pacth(mengganti data tapi hanya sebagain)
+-opsion (bertanya operasi app digunakan HTTP method opsion, apakah ada get,put, post dan dll)
+- Trace = untuk debbugging
+
+
+HTTP Header
+- HTTP Header merupakan informasti tambahan yang biasanya dikirimka di request atau respone
+- HTTP header biasanya digunakan agar informasi tidak harus dikirimkan melalui Request Body atau Response Body(jadi tidak mengubah isi dari data body)
+- HTTP Header berisi key: value, dan ssat ini sudah banyak sekali standarisasi nama key pada HTTP Header
+
+
+Contoh HTTP Header
+
+1.host : autority wajib ya sejak 
+2.content-type = semisalnya data gambar , kita harus mengetahui bahwa kita merequset gambat maka web server akan tahu kita meminta gambat begitu(menyesuai dengan konten bodynya)
+3.user-agent : sistem operasinya
+4.accept : tipe data yang diterima oleh client (semisal kita minta teks maka kita meminta file teks juga semisal ya  )
+5. Authorzation = 
+
+
+hTTP status respone
+
+HTTP Status merupakan kode HTTP Response yang mengindikasikan apakah sebuah request yang diterima Server sukses, gagal atau adah lain yang diketahui oleh client 
+HTTP status diklasifikasikan(dikategorikan) dalam lima group yaitu :
+1. Infotmational Response(100-199)
+   Informasi response mengindikasi bahwa request telah diterima dan dimengeri, namun client diminta untuk menunggu tahapan akhir response Pada kenyataanya, informational response sangat jarang sekali digunakan
+
+2. Successful Response (200-299)
+   Succesful Response merupkana kode yang mengindikasi bahwa request yang dikirim oleh client telah diterima, dimengerti dan sukses diproses oleh server
+
+3. Redirect (300-399)
+   Redirect status code mengindikasi bahwa client harus melakukan aksi selanjutnya untuk menyelesaikan request, biasanya redirect status code digunakan ketika lokasi sebuah resource berubah,sehingga server meminta client untuk berpindah ke URL Lain, contaoh seperi kita akan ingin login menggunakan facebook , login terlebih dahulu jika sudah login maka kita diarahkan ke halaman facebooknya
+
+4. Client Error(400-499)
+Client error status code merupakan indikasi bahwa request yang dikirimkan oleh client tidak diterima oleh server dikarenakan request yang dikirim dianggap tidak valid
+contoh client mengirim body yang salah, client melakukan request ke tanpa autentikasi di resource ke tanpa autentikasi di resource yang mewajibkan autentikasi dan dll(data client error server tidak menerimanya) not found wkwkw
+
+5. Server Error(500-599)
+server error status code mengindikasi bahwa terjadi kesalahan di Server, biasanya ini ketika ada masalah di server, seperti misalnya tidak bisa terkoneksi ke basis data, terdapat jaringan eror di server, dan lain-lain
+
+
+HTTP Body
+HTTP body merupakan data yang bisa dikirim di HTTP Request atau , data yang diterima dari HTTP, artinya client bisa mengirim data ke server menggunakan HTTP body, begitu juga sebaliknya server bisa memnberikan body di response menggunakan HTTP Body (bisa mengirim data melalui body bolak balik xixi)
+client akan menonton youtube yang akan dipilih oleh user berupa body  yang dikirim juga ke server maka server juga akna mengirimkan itu data response sebuah body juga xxi
+
+!!HTTP body  akan mengirim data sesuai dengan Content-type yang ada di HTTP header
+- Content-TYPE dengan HTTP body :
+HTTP Body erat kaitannya dengan Header key Content-type, biasanya agar client dan server mudah mengerti isi HTTP body, HTTP Message akan memiliki Header Content-type, yang berisi informasi tipe data HTTP body , HTTP body bisa berisikan teks(htlm, js, css,json) atau binary(image,video,audio), data content-type sudah memiliki standarisasi, misalnya bisa kita lihat di link berikut
+
+
